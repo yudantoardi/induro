@@ -456,7 +456,7 @@ header.scrolled .logo {
 
 .contact::before {
   content: "";
-  width: 33.33%;
+  width: 40%;
   height: 100%;
   background: #333;
   position: absolute;
@@ -477,10 +477,24 @@ form .inp-group {
   margin-bottom: 20px;
   position: relative;
 }
+form .inp-group-news {
+  width: 90%;
+  float: left;
+  margin-bottom: 20px;
+  position: relative;
+}
 form .inp-group label {
   font-size: 14px;
   font-family: var(--open);
   color: #333;
+  margin-bottom: 5px;
+  width: 100%;
+  float: left;
+}
+form .inp-group-news label {
+  font-size: 14px;
+  font-family: var(--open);
+  color: rgb(255, 255, 255);
   margin-bottom: 5px;
   width: 100%;
   float: left;
@@ -496,12 +510,31 @@ form .inp-group textarea {
   font-size: 14px;
   padding: 20px;
 }
+form .inp-group-news input,
+form .inp-group-news select,
+form .inp-group-news textarea {
+  width: 100%;
+  float: left;
+  height: 50px;
+  background: #fff;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  padding: 20px;
+}
 form .inp-group input:focus,
 form .inp-group select:focus,
 form .inp-group textarea:focus {
   outline: none;
 }
 form .inp-group textarea {
+  height: 120px;
+}
+form .inp-group-news input:focus,
+form .inp-group-news select:focus,
+form .inp-group-news textarea:focus {
+  outline: none;
+}
+form .inp-group-news textarea {
   height: 120px;
 }
 .contact-map {
@@ -538,9 +571,23 @@ footer p {
   color: #fff;
   font-size: 14px;
 }
+.subscribe-form .inp-group-news input {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: white;
+  padding: 0 0 0 20px;
+  color: #fff;
+  font-size: 14px;
+}
 .subscribe-form .inp-group .btn {
   padding: 15px;
   height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.subscribe-form .inp-group-news .btn {
+  padding: 10px;
+  height: 40px;
   position: absolute;
   top: 0;
   right: 0;
