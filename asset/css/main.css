@@ -726,7 +726,9 @@ footer p.info i {
 }
 
 .hero-slider .owl-prev,
-.hero-slider .owl-next{
+.hero-slider .owl-next,
+.product-slide .owl-prev,
+.product-slide .owl-next{
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -737,28 +739,33 @@ footer p.info i {
   top: calc(50% - 20px);
   text-indent: -200px;
 }
-.hero-slider .owl-prev{
+.hero-slider .owl-prev,
+.product-slide .owl-prev{
   left: 20px;
   background: rgba(255,255,255,0.3) url(../images/left.png) no-repeat center;
   background-size: contain;
 }
-.hero-slider .owl-next{
+.hero-slider .owl-next,
+.product-slide .owl-next{
   right: 20px;
   background: rgba(255,255,255,0.3) url(../images/right.png) no-repeat center;
   background-size: contain;
 }
 
-.hero-slider .owl-pagination{
+.hero-slider .owl-pagination,
+.product-slide .owl-pagination{
   width: 100%;
   text-align: center;
   bottom: 20px;
   position: absolute;
 }
-.hero-slider .owl-pagination .owl-page{
+.hero-slider .owl-pagination .owl-page,
+.product-slide .owl-pagination .owl-page{
   display: inline-block;
   margin: 0 3px;
 }
-.hero-slider .owl-pagination .owl-page span{
+.hero-slider .owl-pagination .owl-page span,
+.product-slide .owl-pagination .owl-page span{
   display: block;
   width: 20px;
   height: 3px;
@@ -770,7 +777,8 @@ footer p.info i {
   -moz-transition: all ease-out 0.3s;
   -webkit-transition: all ease-out 0.3s;
 }
-.hero-slider .owl-pagination .owl-page.active span{
+.hero-slider .owl-pagination .owl-page.active span,
+.product-slide .owl-pagination .owl-page.active span{
   background: #fff;
   width: 40px;
 }
