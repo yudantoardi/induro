@@ -919,6 +919,10 @@ a {
   color: #4a4a4a;
 }
 
+.text {
+  height: 120px;
+}
+
 @media only screen and (max-width: 1024px) {
   .container {
     padding-left: 20px;
@@ -955,6 +959,7 @@ a {
     font-size: 24px;
     padding-top: 20px;
     color: #fff;
+    display: block;
   }
   .nav {
     width: 100vw;
