@@ -663,6 +663,11 @@ footer p.info i {
 
 .world-market {
   border-bottom: 1px solid #dedede;
+  background: #080808;
+}
+.world-market .section-title h4,
+.world-market .section-title h3{
+  color: #fff;
 }
 
 @media screen and (min-width: 1408px) {
