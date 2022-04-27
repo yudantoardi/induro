@@ -176,13 +176,16 @@ section {
 }
 .card.green-bg .text {
   background: var(--green);
-  padding: 30px 40px 20px;
+  padding: 30px 30px 20px;
 }
 .card.green-bg .text h3,
 .card.green-bg .text h3 a,
 .card.green-bg .text span,
 .card.green-bg .text p {
   color: #fff;
+}
+.card.green-bg .text h3{
+  font-size: 16px;
 }
 
 header {
