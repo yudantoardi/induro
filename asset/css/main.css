@@ -931,6 +931,62 @@ a {
   display: none;
 }
 
+/*filtering*/
+.filtering .f-cat{
+  display: none;
+}
+.filtering .f-cat.active{
+  display: block;
+}
+.dist-card{
+  width: 100%;
+  float: left;
+  border: 1px solid #dedede;
+  padding: 30px;
+}
+.dist-card h3{
+  width: 100%;
+  float: left;
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+.dist-card p.info{
+  width: 100%;
+  float: left;
+  font-size: 14px;
+  color: #333;
+  position: relative;
+  padding-left: 24px;
+}
+.dist-card p.info i{
+  position: absolute;
+  top: 7px;
+  left: 0;
+}
+.dist-card .btn{
+  margin-left: 0;
+  margin-top: 20px;
+}
+.section-title{
+  position: relative;
+}
+.section-title .select-area{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.section-title .select-area select{
+  width: 240px;
+  height: 40px;
+  border: none;
+  background: #f4f4f4;
+  padding: 10px 15px;
+  margin-left: 10px;
+  border-bottom: 1px solid #dedede;
+}
+
 @media only screen and (max-width: 1024px) {
  
   .container {
