@@ -211,13 +211,14 @@
                                 justo et ante finibus consectetur eu vel quam.
                             </p>
                             <br>
-                            <p>
-                                Maecenas diam quam, pulvinar sit amet pulvinar a, imperdiet non lectus. Nullam pulvinar
-                                ultrices consequat. Etiam id placerat velit. Curabitur nec felis vitae sem accumsan
-                                viverra. Maecenas malesuada leo justo, nec vehicula ipsum interdum quis. Donec vehicula
-                                dui in nibh maximus, id ultrices risus interdum. Aenean quis lacinia odio, eu porttitor
-                                dui. Morbi commodo ac neque a tristique. Nulla tincidunt mattis lacus eget tincidunt.
-                            </p>
+                            <div class="marketplace">
+                                <h4>Find this product in</h4>
+                                <ul>
+                                    <li><a href="#"><img src="asset/images/tokopedia.png" alt=""></a></li>
+                                    <li><a href="#"><img src="asset/images/shopee.png" alt=""></a></li>
+                                    <li><a href="#"><img src="asset/images/blibli.png" alt=""></a></li>
+                                </ul>
+                            </div>
                             <br>
 
                             <div class="share mt-5 bg-grey is-align-items-flex-end">
@@ -464,30 +465,30 @@
             //Filter
             var filterActive;
 
-                function filterCategory(category) {
-                    if (filterActive != category) {
-                        
-                        // reset results list
-                        $('.filter-cat-results .f-cat').removeClass('active');
-                        
-                        // elements to be filtered
-                        $('.filter-cat-results .f-cat')
-                            .filter('[data-cat="' + category + '"]')
-                            .addClass('active');
-                        
-                        // reset active filter
-                        filterActive = category;
-                    }
+            function filterCategory(category) {
+                if (filterActive != category) {
+                    
+                    // reset results list
+                    $('.filter-cat-results .f-cat').removeClass('active');
+                    
+                    // elements to be filtered
+                    $('.filter-cat-results .f-cat')
+                        .filter('[data-cat="' + category + '"]')
+                        .addClass('active');
+                    
+                    // reset active filter
+                    filterActive = category;
                 }
+            }
 
-                $('.filtering select').change(function() {
-                    if ($(this).val() == 'cat-all') {
-                        $('.filter-cat-results .f-cat').addClass('active');
-                        filterActive = 'cat-all';
-                    } else {
-                        filterCategory($(this).val());
-                    }
-                });
+            $('.filtering select').change(function() {
+                if ($(this).val() == 'cat-all') {
+                    $('.filter-cat-results .f-cat').addClass('active');
+                    filterActive = 'cat-all';
+                } else {
+                    filterCategory($(this).val());
+                }
+            });
 
 
         });
