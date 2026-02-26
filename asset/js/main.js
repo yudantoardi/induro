@@ -46,4 +46,7 @@ $(document).ready(function(){
         $(".nav").toggleClass("show");
         $($(this).children("i")).toggleClass("fa-bars fa-times");
     });
+
+    // Update copyright year
+    $(".current-year").text(new Date().getFullYear());
 });
