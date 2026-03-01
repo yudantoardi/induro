@@ -210,7 +210,7 @@
                                 </div>
                                 <p class="mb-5">Kami siap membantu untuk service dan perbaikan produk Induro Anda.</p>
                                 <figure class="image proportional-img">
-                                    <img src="asset/images/bank/img-3.jpg" alt="Service Image">
+                                    <img src="asset/images/bank/img-30.jpg" alt="Service Image">
                                 </figure>
                             </div>
                         </div>
@@ -335,7 +335,7 @@
                                         </div>
                                         <div id="image-preview" class="image-preview-container"></div>
                                     </div>
-                                    <p class="help">Bisa upload lebih dari 1 gambar</p>
+                                    <p class="help">Maksimal upload 3 foto, maks 1MB per foto</p>
                                 </div>
 
                                 <div class="field">
@@ -443,9 +443,31 @@
 
         function previewImages() {
             var fileInput = document.querySelector('#file-upload');
+            var maxFiles = 3;
+            var maxSize = 1 * 1024 * 1024; // 1MB
             
             if (fileInput.files) {
-                Array.from(fileInput.files).forEach(function(file) {
+                var currentFilesCount = dataTransfer.items.length;
+                var newFiles = Array.from(fileInput.files);
+                
+                if (currentFilesCount + newFiles.length > maxFiles) {
+                    alert('Maksimal upload ' + maxFiles + ' foto.');
+                    fileInput.files = dataTransfer.files;
+                    return;
+                }
+
+                // Check file size
+                var oversizedFiles = newFiles.filter(function(file) {
+                    return file.size > maxSize;
+                });
+
+                if (oversizedFiles.length > 0) {
+                    alert('File terlalu besar (maks 1MB): ' + oversizedFiles.map(f => f.name).join(', '));
+                    fileInput.files = dataTransfer.files;
+                    return;
+                }
+
+                newFiles.forEach(function(file) {
                     dataTransfer.items.add(file);
                 });
                 
