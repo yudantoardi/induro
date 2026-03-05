@@ -203,19 +203,167 @@
             <section class="section">
                 <div class="container">
                     <div class="columns">
-                        <div class="column is-6">
+                        <div class="column is-3">
                             <div class="sticky-sidebar">
-                                <div class="section-title custom-title">
-                                    <h3>Form Service & Klaim Garansi</h3>
-                                </div>
-                                <p class="mb-5">Kami siap membantu untuk service dan perbaikan produk Induro Anda.</p>
-                                <figure class="image proportional-img">
-                                    <img src="asset/images/bank/img-30.jpg" alt="Service Image">
-                                </figure>
+
+
+                                <aside class="menu custom-sidebar-menu">
+                                    <div class="menu-indicator-track">
+                                        <div class="menu-indicator"></div>
+                                    </div>
+                                    <ul class="menu-list">
+                                        <li><a href="#aktivasi-garansi">Aktivasi Garansi</a></li>
+                                        <li><a href="#syarat-ketentuan">Syarat dan Ketentuan</a></li>
+                                        <li><a href="#cek-aktivasi">Cek Aktivasi Garansi</a></li>
+                                        <li><a href="#klaim-garansi">Klaim Garansi</a></li>
+                                    </ul>
+                                </aside>
+
                             </div>
                         </div>
-                        <div class="column is-6">
-                            <form action="#" method="POST" enctype="multipart/form-data" class="form-klaim">
+                        <div class="column is-9">
+                            <!-- Section Aktivasi Garansi -->
+                            <div class="card mb-5" id="aktivasi-garansi">
+                                <div class="card-header">
+                                    <p class="card-header-title">
+                                        Aktivasi Garansi
+                                    </p>
+                                </div>
+                                <div class="card-content">
+                                    <form action="#" method="POST" class="form-klaim form-aktivasi">
+                                        <div class="field">
+                                            <label class="label">Nama Lengkap</label>
+                                            <div class="control">
+                                                <input class="input" type="text" placeholder="Nama Lengkap Anda" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="columns is-variable is-2">
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <label class="label">No. Order</label>
+                                                    <div class="control">
+                                                        <input class="input" type="text" placeholder="Contoh: INV/2023/001" pattern="[a-zA-Z0-9\-\/]{6,}" title="Min. 6 karakter (huruf, angka, -, /)" required>
+                                                    </div>
+                                                    <p class="help">Min. 6 karakter</p>
+                                                </div>
+                                            </div>
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <label class="label">Platform</label>
+                                                    <div class="control">
+                                                        <div class="select is-fullwidth">
+                                                            <select required>
+                                                                <option value="" disabled selected>Pilih Platform</option>
+                                                                <option value="option1">Option 1</option>
+                                                                <option value="option2">Option 2</option>
+                                                                <option value="option3">Option 3</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="columns is-variable is-2">
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <label class="label">Email</label>
+                                                    <div class="control">
+                                                        <input class="input" type="email" placeholder="Alamat Email" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <label class="label">No. HP/Whatsapp</label>
+                                                    <div class="control">
+                                                        <input class="input" type="tel" placeholder="08xxx" pattern="^08[0-9]{8,}$" title="Gunakan format: 08xxx" required>
+                                                    </div>
+                                                    <p class="help">Gunakan format: 08xxx</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="field mt-5">
+                                            <div class="control">
+                                                <button class="button is-primary px-6">Aktivasi Sekarang</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Section Syarat dan Ketentuan -->
+                            <div class="card mb-5" id="syarat-ketentuan">
+                                <div class="card-header">
+                                    <p class="card-header-title">
+                                        Syarat dan Ketentuan
+                                    </p>
+                                </div>
+                                <div class="card-content">
+                                    <div class="content">
+                                        <div class="columns is-vcentered mb-4">
+                                            <div class="column is-8">
+                                                <p>
+                                                    Kami berkomitmen untuk memberikan kualitas terbaik bagi setiap produk Induro. 
+                                                    Layanan garansi ini diberikan sebagai jaminan atas kualitas dan daya tahan produk kami. 
+                                                    Mohon baca dengan saksama syarat dan ketentuan berikut sebelum mengajukan klaim.
+                                                </p>
+                                            </div>
+                                            <div class="column is-4">
+                                                <figure class="image is-3by2">
+                                                    <img src="asset/images/bank/img-1.jpg" alt="Ilustrasi Garansi" style="border-radius: 8px; object-fit: cover;">
+                                                </figure>
+                                            </div>
+                                        </div>
+
+                                        <h5 class="has-text-weight-bold mb-3">Ketentuan Umum Garansi:</h5>
+                                        <ul style="margin-left: 1.5rem; list-style-type: disc;">
+                                            <li>Garansi berlaku selama <strong>12 bulan</strong> sejak tanggal pembelian yang tercantum pada faktur.</li>
+                                            <li>Garansi hanya mencakup kerusakan akibat cacat produksi atau kesalahan material, bukan kesalahan penggunaan.</li>
+                                            <li>Wajib menyertakan bukti pembelian asli (faktur/nota) dan kartu garansi yang telah diisi lengkap saat mengajukan klaim.</li>
+                                            <li>Produk yang telah diperbaiki atau dimodifikasi oleh pihak ketiga yang tidak resmi akan menyebabkan garansi hangus.</li>
+                                            <li>Biaya pengiriman produk ke pusat layanan kami ditanggung oleh pelanggan, sedangkan biaya pengiriman kembali ditanggung oleh Induro (jika klaim disetujui).</li>
+                                            <li>Proses pemeriksaan dan perbaikan estimasi memakan waktu <strong>7-14 hari kerja</strong> setelah barang diterima.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section Cek Aktivasi Garansi -->
+                            <div class="card mb-5" id="cek-aktivasi">
+                                <div class="card-header">
+                                    <p class="card-header-title">
+                                        Cek Aktivasi Garansi
+                                    </p>
+                                </div>
+                                <div class="card-content">
+                                    <div class="content">
+                                        <p class="mb-4">Cek status aktivasi garansi produk Anda dengan memasukkan nomor seri produk.</p>
+                                        <form action="#" method="GET">
+                                            <div class="field has-addons">
+                                                <div class="control is-expanded">
+                                                    <input class="input" type="text" placeholder="Nomor Seri Produk" required>
+                                                </div>
+                                                <div class="control">
+                                                    <button class="button is-primary">Cek Status</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section Klaim Garansi -->
+                            <div class="card mb-5" id="klaim-garansi">
+                                <div class="card-header">
+                                    <p class="card-header-title">
+                                        Form Service & Klaim Garansi
+                                    </p>
+                                </div>
+                                <div class="card-content">
+                                    <form action="#" method="POST" enctype="multipart/form-data" class="form-klaim">
                                 <div class="field">
                                     <label class="label">Nama Lengkap</label>
                                     <div class="control">
@@ -356,10 +504,11 @@
 
                                 <div class="field mt-5">
                                     <div class="control">
-                                        <button class="btn primary">Kirim Form</button>
+                                        <button class="button is-primary px-6">Kirim Form</button>
                                     </div>
                                 </div>
                             </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -439,6 +588,139 @@
     <script src="asset/js/owl.carousel.min.js"></script>
     <script src="asset/js/main.js"></script>
     <script>
+        // Sidebar Navigation Sticky & Active State Logic
+        (function() {
+            const sections = document.querySelectorAll('.column.is-9 .card');
+            const navLinks = document.querySelectorAll('.custom-sidebar-menu a');
+            const indicator = document.querySelector('.menu-indicator');
+            const sidebarMenu = document.querySelector('.custom-sidebar-menu');
+            const stickySidebar = document.querySelector('.sticky-sidebar');
+            let isMobile = window.innerWidth <= 768;
+
+            // Handle Sticky Header on Mobile
+            function handleStickyHeader() {
+                if (window.innerWidth <= 768 && stickySidebar) {
+                    const rect = stickySidebar.parentElement.getBoundingClientRect();
+                    // When the top of the container hits the header height (e.g., 60px) or goes above
+                    const headerHeight = 80; // Approximate header height
+                    if (rect.top <= headerHeight) {
+                        stickySidebar.classList.add('is-fixed-mobile');
+                        // Add placeholder height to prevent jump
+                        stickySidebar.parentElement.style.minHeight = stickySidebar.offsetHeight + 'px';
+                    } else {
+                        stickySidebar.classList.remove('is-fixed-mobile');
+                        stickySidebar.parentElement.style.minHeight = '';
+                    }
+                } else {
+                    // Reset on desktop
+                    if (stickySidebar) {
+                        stickySidebar.classList.remove('is-fixed-mobile');
+                        if(stickySidebar.parentElement) stickySidebar.parentElement.style.minHeight = '';
+                    }
+                }
+            }
+
+            function updateIndicator(link) {
+                // Only update vertical indicator on desktop
+                if (window.innerWidth > 768 && link && indicator && sidebarMenu) {
+                    // Calculate position relative to the sidebar container
+                    const linkRect = link.getBoundingClientRect();
+                    const sidebarRect = sidebarMenu.getBoundingClientRect();
+                    
+                    const top = linkRect.top - sidebarRect.top;
+                    const height = linkRect.height;
+                    
+                    indicator.style.top = top + 'px';
+                    indicator.style.height = height + 'px';
+                } else if (indicator) {
+                    // Hide vertical indicator on mobile or if invalid
+                    indicator.style.height = '0px';
+                }
+            }
+
+            function makeActive(link) {
+                navLinks.forEach(item => item.classList.remove('is-active'));
+                link.classList.add('is-active');
+                updateIndicator(link);
+                
+                // Scroll horizontal menu into view on mobile
+                if (window.innerWidth <= 768) {
+                    link.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+            }
+
+            function selectActiveSection() {
+                let scrollPosition = window.scrollY + 200; // Increased offset for better active state detection
+
+                let currentSection = null;
+
+                sections.forEach(section => {
+                    // Get absolute position relative to document
+                    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+
+                    if (sectionTop <= scrollPosition && sectionBottom > scrollPosition) {
+                        currentSection = section;
+                    }
+                });
+
+                if (currentSection) {
+                    const id = currentSection.getAttribute('id');
+                    const activeLink = document.querySelector(`.custom-sidebar-menu a[href="#${id}"]`);
+                    if (activeLink) {
+                        makeActive(activeLink);
+                    }
+                }
+            }
+
+            window.addEventListener('scroll', function() {
+                selectActiveSection();
+                handleStickyHeader();
+            });
+            
+            // Update indicator on resize too
+            window.addEventListener('resize', function() {
+                selectActiveSection();
+                handleStickyHeader();
+                isMobile = window.innerWidth <= 768;
+            });
+            
+            // Initial check
+            // Use setTimeout to ensure layout is ready
+            setTimeout(function() {
+                selectActiveSection();
+                handleStickyHeader();
+            }, 100);
+
+            // Smooth scroll click handler
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    
+                    if (targetSection) {
+                        // Calculate absolute position
+                        const elementPosition = targetSection.getBoundingClientRect().top + window.scrollY;
+                        // Larger offset for mobile to account for fixed header
+                        const offset = window.innerWidth <= 768 ? 160 : 120;
+                        const offsetPosition = elementPosition - offset; 
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Manually set active state on click
+                        const activeLink = document.querySelector(`.custom-sidebar-menu a[href="#${targetId}"]`);
+                        if (activeLink) {
+                            makeActive(activeLink);
+                        }
+                    }
+                });
+            });
+        })();
+
         var dataTransfer = new DataTransfer();
 
         function previewImages() {

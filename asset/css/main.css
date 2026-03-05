@@ -11,6 +11,10 @@ font-family: 'Open Sans', sans-serif;
   --green: #026b33;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   overflow-x: hidden;
 }
@@ -44,12 +48,24 @@ header,
 section,
 footer {
   width: 100%;
+  clear: both; /* Added to prevent overlapping with floated elements */
+  display: block; /* Ensure block formatting context */
   /* float: left; */
 }
 
 section {
   padding: 100px 0;
   position: relative;
+  overflow: visible; /* Ensure sticky elements are not clipped */
+  z-index: 1; /* Ensure section content is properly stacked */
+}
+
+footer {
+  padding: 100px 0 12px;
+  background: #333;
+  color: #fff;
+  position: relative; /* Establish stacking context */
+  z-index: 2; /* Ensure footer is above content if needed, but standard flow should handle it */
 }
 
 .pr {
@@ -698,15 +714,23 @@ footer p.info i {
 
 /* KLAIM GARANSI FORM */
 .form-klaim {
-  background: #fff;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border: 1px solid #eee;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
 }
 
 .form-klaim .field:not(:last-child) {
   margin-bottom: 1.5rem;
+}
+
+.form-klaim .columns {
+  margin-bottom: 1.5rem;
+}
+
+.form-klaim .columns .field {
+  margin-bottom: 0;
 }
 
 .form-klaim .label {
@@ -823,10 +847,10 @@ footer p.info i {
   flex-shrink: 0;
 }
 
-.form-klaim .btn.primary {
-  width: 100%;
+.form-klaim .button.is-primary {
+  width: auto;
   border-radius: 8px;
-  padding: 16px;
+  padding: 16px 32px;
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
@@ -834,12 +858,28 @@ footer p.info i {
   box-shadow: 0 4px 15px rgba(2, 107, 51, 0.2);
   margin-left: 0;
   transition: all 0.3s ease;
+  background-color: var(--green);
+  border-color: var(--green);
+  color: #fff;
 }
 
-.form-klaim .btn.primary:hover {
+#cek-aktivasi .button.is-primary {
+  background-color: var(--green);
+  border-color: var(--green);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+#cek-aktivasi .button.is-primary:hover {
+  background-color: #00883f;
+  border-color: #00883f;
+}
+
+.form-klaim .button.is-primary:hover {
   box-shadow: 0 8px 25px rgba(2, 107, 51, 0.3);
   transform: translateY(-2px);
   background: #00883f;
+  border-color: #00883f;
 }
 
 .form-klaim .select {
@@ -1757,4 +1797,195 @@ a {
     color: #666;
     line-height: 1.6;
     font-size: 14px;
+}
+
+.custom-sidebar-menu {
+  position: relative;
+  padding-left: 20px;
+}
+
+.menu-indicator-track {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+.menu-indicator {
+  position: absolute;
+  left: 0;
+  width: 4px;
+  background-color: var(--green);
+  border-radius: 4px;
+  transition: top 0.3s ease, height 0.3s ease;
+  top: 0;
+  height: 0;
+}
+
+.custom-sidebar-menu .menu-list {
+  list-style: none !important;
+  padding: 0;
+  margin: 0;
+}
+.custom-sidebar-menu .menu-list li {
+  list-style: none !important;
+  margin-bottom: 0.5rem;
+  padding-left: 0;
+}
+.custom-sidebar-menu .menu-list li::before {
+  content: none;
+}
+.custom-sidebar-menu .menu-list a {
+  color: #555;
+  border-radius: 8px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  border: 1px solid transparent;
+  text-decoration: none;
+  background-color: #fff;
+}
+.custom-sidebar-menu .menu-list a:hover {
+  background-color: transparent;
+  color: var(--green);
+  padding-left: 25px;
+}
+.custom-sidebar-menu .menu-list a.is-active {
+  background-color: transparent;
+  color: var(--green);
+  font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+  .sticky-sidebar {
+    /* Placeholder for JS controlled fixed state */
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .sticky-sidebar.is-fixed-mobile {
+    position: fixed;
+    top: 80px; /* Adjust based on header height */
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
+
+  .custom-sidebar-menu {
+    position: relative;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+    padding: 15px 0;
+    padding-left: 0;
+    margin: 0;
+    /* Remove box-shadow from here as it moves to sticky container */
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    display: block;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .custom-sidebar-menu::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+  
+  .custom-sidebar-menu .menu-list {
+    display: flex;
+    flex-direction: row;
+    padding: 0 20px;
+    width: max-content;
+  }
+  
+  .custom-sidebar-menu .menu-list li {
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+  
+  .custom-sidebar-menu .menu-list a {
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .custom-sidebar-menu .menu-list a:hover {
+    padding-left: 15px; /* Reset padding shift on mobile */
+  }
+
+  .menu-indicator-track {
+    display: none;
+  }
+  
+  .menu-indicator {
+    display: none;
+  }
+  
+  /* Horizontal active state for mobile */
+  .custom-sidebar-menu .menu-list a.is-active {
+    background-color: transparent;
+    color: var(--green);
+    font-weight: 700;
+    position: relative;
+    border-radius: 0;
+  }
+  
+  .custom-sidebar-menu .menu-list a.is-active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--green);
+    border-radius: 3px 3px 0 0;
+  }
+  
+  .custom-sidebar-menu .menu-list a {
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 0;
+    background-color: transparent;
+    color: #555;
+    margin-right: 5px;
+  }
+}
+
+.card-header {
+  background-color: transparent;
+  box-shadow: none;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.card-header-title {
+  font-family: var(--mont);
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  padding: 0;
+}
+.card {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px;
+  border: 1px solid #f0f0f0;
+}
+@media screen and (max-width: 768px) {
+  .card {
+    padding: 20px;
+  }
+}
+.card-content {
+  padding: 0;
 }
